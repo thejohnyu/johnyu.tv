@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3johnyutv",
+  "bucketName": "johnyutv",
+  "policyUUID": "c27f9b95",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
