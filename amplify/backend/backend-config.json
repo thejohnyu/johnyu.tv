@@ -53,6 +53,24 @@
       "service": "Cognito"
     }
   },
+  "geo": {
+    "map0eb95ff8": {
+      "accessType": "AuthorizedAndGuestUsers",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "johnyutv"
+        }
+      ],
+      "isDefault": true,
+      "mapStyle": "VectorEsriStreets",
+      "providerPlugin": "awscloudformation",
+      "service": "Map"
+    }
+  },
   "storage": {
     "s3johnyutv": {
       "dependsOn": [],
