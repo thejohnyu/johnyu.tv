@@ -8,9 +8,9 @@ function App() {
       <HikingCollection />
       <MapView
         initialViewState={{
-          latitude: 37.8,
-          longitude: -122.4,
-          zoom: 14,
+          latitude: 33.743281,
+          longitude: -117.868986,
+          zoom: 11,
         }}
       />
     </div>
