@@ -12,11 +12,12 @@ function App() {
 
   useEffect(() => {
     const getHikes = async () => {
-      const hikes = await DataStore.query(Hike);
-      setHikes(hikes);
+      const hikes = await DataStore.query(Hike)
+      console.log(' =-=-=--=-==-where is my fucking data=--==-=--==--==-=--=-= ', hikes)
+      setHikes(hikes)
     };
 
-    getHikes();
+    getHikes()
   }, []);
 
   return (
