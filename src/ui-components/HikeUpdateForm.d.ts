@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { Hike } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -57,7 +58,7 @@ export declare type HikeUpdateFormProps = React.PropsWithChildren<{
     overrides?: HikeUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    hike?: any;
+    hike?: Hike;
     onSubmit?: (fields: HikeUpdateFormInputValues) => HikeUpdateFormInputValues;
     onSuccess?: (fields: HikeUpdateFormInputValues) => void;
     onError?: (fields: HikeUpdateFormInputValues, errorMessage: string) => void;

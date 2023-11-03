@@ -15,6 +15,9 @@ export const onCreateHike = /* GraphQL */ `
       coverImg
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -33,6 +36,9 @@ export const onUpdateHike = /* GraphQL */ `
       coverImg
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -51,6 +57,9 @@ export const onDeleteHike = /* GraphQL */ `
       coverImg
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }

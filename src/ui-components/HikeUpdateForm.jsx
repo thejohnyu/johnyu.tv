@@ -7,10 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Hike } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { API } from "aws-amplify";
-import { getHike } from "../graphql/queries";
-import { updateHike } from "../graphql/mutations";
+import { DataStore } from "aws-amplify";
 export default function HikeUpdateForm(props) {
   const {
     id: idProp,
@@ -60,12 +59,7 @@ export default function HikeUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await API.graphql({
-              query: getHike.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getHike
+        ? await DataStore.query(Hike, idProp)
         : hikeModelProp;
       setHikeRecord(record);
     };
@@ -108,14 +102,14 @@ export default function HikeUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          name: name ?? null,
-          difficulty: difficulty ?? null,
-          location: location ?? null,
-          lat: lat ?? null,
-          long: long ?? null,
-          length: length ?? null,
-          time: time ?? null,
-          coverImg: coverImg ?? null,
+          name,
+          difficulty,
+          location,
+          lat,
+          long,
+          length,
+          time,
+          coverImg,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -145,22 +139,17 @@ export default function HikeUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await API.graphql({
-            query: updateHike.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: hikeRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Hike.copyOf(hikeRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

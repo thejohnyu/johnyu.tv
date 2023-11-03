@@ -15,6 +15,9 @@ export const getHike = /* GraphQL */ `
       coverImg
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -38,9 +41,49 @@ export const listHikes = /* GraphQL */ `
         coverImg
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncHikes = /* GraphQL */ `
+  query SyncHikes(
+    $filter: ModelHikeFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncHikes(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        difficulty
+        location
+        lat
+        long
+        length
+        time
+        coverImg
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }

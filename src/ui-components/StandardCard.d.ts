@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Hike } from "../models";
 import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -27,7 +28,7 @@ export declare type StandardCardOverridesProps = {
     "832 34th Ave, Seattle, WA 98122"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type StandardCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    hike?: any;
+    hike?: Hike;
 } & {
     overrides?: StandardCardOverridesProps | undefined | null;
 }>;

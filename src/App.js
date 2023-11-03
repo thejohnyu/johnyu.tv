@@ -13,17 +13,20 @@ function App() {
   useEffect(() => {
     const getHikes = async () => {
       try {
-        const hikes = await DataStore.query(Hike)
-        console.log(' =-=-=--=-==-where is my fucking data=--==-=--==--==-=--=-= ', hikes)
-        setHikes(hikes)
+        const hikes = await DataStore.query(Hike);
+        console.log(
+          " =-=-=--=-==-where is my fucking data=--==-=--==--==-=--=-= ",
+          hikes
+        );
+        setHikes(hikes);
       } catch (error) {
-        console.log('Error retrieving hikes', error);
+        console.log("Error retrieving posts", error);
       }
     };
 
-    getHikes()
+    getHikes();
   }, []);
-console.log('hikes -=-==--=', hikes)
+  console.log("useEffect -=-==--=", hikes);
   return (
     <div className="App">
       <HikingCollection />
