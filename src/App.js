@@ -26,12 +26,12 @@ function App() {
         initialViewState={{
           latitude: 33.743281,
           longitude: -117.868986,
-          zoom: 14,
+          zoom: 7,
         }}
       >
-        {hikes.map((hike) => {
-          <Marker latitude={hike.lat} longitude={hike.long} key={hike.id} />;
-        })}
+        {hikes.map((hike) => (
+          <Marker latitude={hike.lat} longitude={hike.long} key={hike.id} />
+        ))}
       </MapView>
     </div>
   );
