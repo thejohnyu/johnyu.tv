@@ -18,11 +18,9 @@
       "storage": {
         "s3johnyutv": {}
       },
-      "api": {
-        "johnyutv": {}
-      },
       "geo": {
-        "map0eb95ff8": {}
+        "map0eb95ff8": {},
+        "map005e6dc8": {}
       }
     }
   }

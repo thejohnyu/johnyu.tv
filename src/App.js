@@ -1,11 +1,11 @@
 import "./App.css";
 import { HikingCollection } from "./ui-components";
 import { MapView } from "@aws-amplify/ui-react-geo";
-import "@aws-amplify/ui-react-geo/styles.css";
 import { DataStore } from "aws-amplify";
 import { useState, useEffect } from "react";
 import { Hike } from "./models";
 import { Marker } from "react-map-gl";
+import "@aws-amplify/ui-react-geo/styles.css";
 
 function App() {
   const [hikes, setHikes] = useState([]);
@@ -19,7 +19,7 @@ function App() {
 
     getHikes()
   }, []);
-
+console.log('hikes -=-==--=', hikes)
   return (
     <div className="App">
       <HikingCollection />
