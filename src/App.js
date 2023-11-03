@@ -12,9 +12,13 @@ function App() {
 
   useEffect(() => {
     const getHikes = async () => {
-      const hikes = await DataStore.query(Hike)
-      console.log(' =-=-=--=-==-where is my fucking data=--==-=--==--==-=--=-= ', hikes)
-      setHikes(hikes)
+      try {
+        const hikes = await DataStore.query(Hike)
+        console.log(' =-=-=--=-==-where is my fucking data=--==-=--==--==-=--=-= ', hikes)
+        setHikes(hikes)
+      } catch (error) {
+        console.log('Error retrieving hikes', error);
+      }
     };
 
     getHikes()
