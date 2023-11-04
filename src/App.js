@@ -26,6 +26,7 @@ function App() {
 
     getHikes();
   }, []);
+  console.log("hikes --==--=>", hikes);
   return (
     <Grid templateColumns="250px 1fr" templateRows="100vh">
       <View backgroundColor={tokens.colors.blue[10]}></View>
