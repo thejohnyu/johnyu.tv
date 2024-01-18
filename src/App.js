@@ -26,70 +26,29 @@ function App() {
 
     getHikes();
   }, []);
-  console.log('=--==-=-=->>>', hikes)
+
   return (
-    <Grid templateColumns="1fr 1fr" templateRows="100vh">
-      <div style={{ marginTop: '60px'}}>
+    <div class="container">
+      <header>Header</header>
+      <nav>
         <HikingCollection />
-      </div>
-      <View>
-        <Grid
-          justifyContent="center"
-          alignItems="center"
-          templateColumns="60% 40%"
-          templateRows="60px"
-          backgroundColor={tokens.colors.blue[30]}
-        >
-          <Flex justifyContent="center">
-            <View>
-              <Button
-                size="small"
-                loadingText=""
-                onClick={() => alert("hello")}
-              >
-                Map
-              </Button>
-              <Button
-                size="small"
-                loadingText=""
-                onClick={() => alert("hello")}
-              >
-                Satelite
-              </Button>
-              <Button
-                size="small"
-                loadingText=""
-                onClick={() => alert("hello")}
-              >
-                Grid
-              </Button>
-            </View>
-          </Flex>
-          <Flex justifyContent="center">
-            <View>
-              <SearchField
-                label="Search"
-                placeholder="Search"
-                size="small"
-                hasSearchButton={false}
-                hasSearchIcon={true}
-              />
-            </View>
-          </Flex>
-        </Grid>
+      </nav>
+      <main>
         <MapView
           initialViewState={{
             latitude: 33.743281,
             longitude: -117.868986,
             zoom: 7,
           }}
+          style={{width: '100%', height: '100%' }}
         >
           {hikes.map((hike) => (
             <Marker latitude={hike.lat} longitude={hike.long} key={hike.id} />
           ))}
         </MapView>
-      </View>
-    </Grid>
+      </main>
+      <footer>Footer</footer>
+    </div>
   );
 }
 
