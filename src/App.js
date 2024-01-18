@@ -28,8 +28,10 @@ function App() {
   }, []);
   console.log('=--==-=-=->>>', hikes)
   return (
-    <Grid templateColumns="250px 1fr" templateRows="100vh">
-      <HikingCollection />
+    <Grid templateColumns="1fr 1fr" templateRows="100vh">
+      <div style={{ marginTop: '60px'}}>
+        <HikingCollection />
+      </div>
       <View>
         <Grid
           justifyContent="center"
