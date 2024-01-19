@@ -52,6 +52,7 @@ function App() {
           {hikes.map((hike) => (
             <Marker latitude={hike.lat} longitude={hike.long} key={hike.id} />
           ))}
+
         </MapView>
       </main>
       <footer>

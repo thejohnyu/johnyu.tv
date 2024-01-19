@@ -4,7 +4,6 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as ActionCard } from "./ActionCard";
 export { default as Ampligram } from "./Ampligram";
 export { default as CTASection } from "./CTASection";
 export { default as CheckoutPayment } from "./CheckoutPayment";
@@ -19,6 +18,7 @@ export { default as HeroLayout1 } from "./HeroLayout1";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as HikeCreateForm } from "./HikeCreateForm";
 export { default as HikeUpdateForm } from "./HikeUpdateForm";
+export { default as HikingCard } from "./HikingCard";
 export { default as HikingCollection } from "./HikingCollection";
 export { default as ItemCard } from "./ItemCard";
 export { default as Logo } from "./Logo";
@@ -36,7 +36,5 @@ export { default as ProfileCard } from "./ProfileCard";
 export { default as ReviewCard } from "./ReviewCard";
 export { default as SideBar } from "./SideBar";
 export { default as SocialPost } from "./SocialPost";
-export { default as StandardCard } from "./StandardCard";
 export { default as Stat } from "./Stat";
-export { default as TallCard } from "./TallCard";
 export { default as studioTheme } from "./studioTheme";
