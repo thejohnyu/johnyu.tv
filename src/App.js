@@ -1,11 +1,16 @@
 import "./App.css";
-import { HikingCollection } from "./ui-components";
+import {
+  HikingCollection,
+  MarketingFooter,
+  NavBarHeader,
+} from "./ui-components";
 import { MapView } from "@aws-amplify/ui-react-geo";
 import { DataStore } from "aws-amplify";
 import { useState, useEffect } from "react";
 import { Hike } from "./models";
 import { Marker } from "react-map-gl";
 import "@aws-amplify/ui-react-geo/styles.css";
+
 import {
   Grid,
   View,
@@ -29,7 +34,9 @@ function App() {
 
   return (
     <div class="container">
-      <header>Header</header>
+      <header>
+        <NavBarHeader width={'100%'} />
+      </header>
       <nav>
         <HikingCollection />
       </nav>
@@ -40,14 +47,16 @@ function App() {
             longitude: -117.868986,
             zoom: 7,
           }}
-          style={{width: '100%', height: '100%' }}
+          style={{ width: "100%", height: "100%" }}
         >
           {hikes.map((hike) => (
             <Marker latitude={hike.lat} longitude={hike.long} key={hike.id} />
           ))}
         </MapView>
       </main>
-      <footer>Footer</footer>
+      <footer>
+        <MarketingFooter width={'100%'} />
+      </footer>
     </div>
   );
 }
