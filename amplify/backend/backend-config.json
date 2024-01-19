@@ -54,7 +54,7 @@
     }
   },
   "geo": {
-    "map005e6dc8": {
+    "map9a53fba7": {
       "accessType": "AuthorizedAndGuestUsers",
       "dependsOn": [
         {
@@ -66,23 +66,7 @@
         }
       ],
       "isDefault": true,
-      "mapStyle": "VectorEsriStreets",
-      "providerPlugin": "awscloudformation",
-      "service": "Map"
-    },
-    "map0eb95ff8": {
-      "accessType": "AuthorizedAndGuestUsers",
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "johnyutv"
-        }
-      ],
-      "isDefault": false,
-      "mapStyle": "VectorEsriStreets",
+      "mapStyle": "RasterEsriImagery",
       "providerPlugin": "awscloudformation",
       "service": "Map"
     }
