@@ -12,6 +12,7 @@
   grid-gap: 10px;
 
   height: 100vh;
+  background-color: rgb(243, 244, 246);
 }
 
 /* assign columns to grid areas */
