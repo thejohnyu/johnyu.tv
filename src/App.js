@@ -20,9 +20,8 @@ import {
   Flex,
 } from "@aws-amplify/ui-react";
 
-function App() {
+const useHikes = () => {
   const [hikes, setHikes] = useState([]);
-  const { tokens } = useTheme();
   useEffect(() => {
     const getHikes = async () => {
       const hikes = await DataStore.query(Hike);
@@ -31,6 +30,12 @@ function App() {
 
     getHikes();
   }, []);
+
+  return hikes
+}
+
+function App() {
+  const hikes = useHikes();
 
   return (
     <div class="container">
